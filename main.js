@@ -10,7 +10,7 @@ require('electron-reload')(__dirname);
 let win = null;
 
 function createWindow() {
-	win = new BrowserWindow({width: 1000, height: 600});
+	win = new BrowserWindow({width: 800, height: 600});
 	win.loadURL('http://localhost:4200');
 
 	if(process.env.PACKAGE === 'true'){
@@ -21,7 +21,7 @@ function createWindow() {
 		}));
 	} else {
 		win.loadURL(process.env.HOST);
-		win.webContents.openDevTools();
+		// win.webContents.openDevTools();
 	} 
 
 	win.webContents.openDevTools();

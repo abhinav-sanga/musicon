@@ -39,6 +39,7 @@
     "@angular/router": "^6.0.3",
     "core-js": "^2.5.4",
     "dotenv": "^4.0.0",
+    "electron-packager": "^12.1.2",
     "electron-reload": "^1.2.5",
     "font-awesome": "^4.7.0",
     "primeng": "^6.1.4",
