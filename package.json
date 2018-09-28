@@ -1,5 +1,5 @@
 {
-  "name": "muscon",
+  "name": "musicon",
   "version": "1.0.0",
   "description": "A Music App",
   "main": "main.js",
@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/abhinav-sanga/muscon.git"
+    "url": "https://github.com/abhinav-sanga/musicon.git"
   },
   "keywords": [
     "music",
@@ -23,9 +23,9 @@
   "author": "Abhinav Sanga",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/abhinav-sanga/muscon/issues"
+    "url": "https://github.com/abhinav-sanga/musicon/issues"
   },
-  "homepage": "https://github.com/abhinav-sanga/muscon#readme",
+  "homepage": "https://github.com/abhinav-sanga/musicon#readme",
   "private": true,
   "dependencies": {
     "@angular/animations": "^6.0.3",
