@@ -91,6 +91,12 @@ export class AppComponent {
     }
   }
 
+   handleUpdate(track) {
+    this.musicService.play(track.stream_url);
+    this.title = track.title;
+    this.backgroundStyle = this.composeBackgroundStyle(track.artwork_url)
+  }
+
   composeBackgroundStyle(url) {
       return {
         width: '100%',
