@@ -47,3 +47,16 @@
   font-size: 35px;
   outline: none;
 }
+
+@media screen and (max-width: 437px){
+  .player .player__backward button, .player .player__forward button{
+    width: 50px !important; 
+    height: 50px !important;
+  }
+
+  .player .player__main button {
+    width: 60px !important;
+    height: 50px !important;
+  }
+}
+

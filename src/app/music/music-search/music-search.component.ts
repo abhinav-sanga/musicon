@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { MusicService } from '../services/music.service';
 
 @Component({
   selector: 'app-music-search',
@@ -7,7 +8,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class MusicSearchComponent implements OnInit {
 
-  constructor() { }
+  constructor(private musicService: MusicService) { }
 
   ngOnInit() {
   }

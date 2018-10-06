@@ -26,3 +26,12 @@
   border-radius: 2px;
   background-size: 35px 20px, 100% 100%, 100% 100%;
 }
+
+@media screen and (max-width: 471px){
+  .progress progress[value] {
+    width: 60%;
+    height: 20px;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+}

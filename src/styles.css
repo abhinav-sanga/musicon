@@ -13,15 +13,26 @@ body{
 }
 
 .ui-autocomplete, .ui-inputtext {
-  width: 100%;
+  width: 80%;
   margin: 0;
 }
 
 .ui-inputtext {
   border-radius: 0;
-  margin: 0;
+  margin-top: 1.5em;
+  margin-left: 23%;
+  margin-right: 20%;
   border: none;
   border-bottom: 2px solid rgb(21,96,150);
   outline: none;
   background: rgba(255, 255, 255, 0.8);
+}
+
+.ui-autocomplete .ui-autocomplete-panel {
+  min-width: 80%;
+}
+
+div.ui-autocomplete-panel.ui-widget.ui-widget-content.ui-corner-all.ui-shadow.ng-trigger.ng-trigger-overlayAnimation.ng-tns-c6-0.ng-star-inserted{
+  top: 55px !important;
+  margin-left: 23%;
 }

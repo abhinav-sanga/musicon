@@ -13,7 +13,7 @@ export class AppComponent {
   duration;
   paused = true;
   tracks = {};
-  filteredTracks: any[] = [];
+  filteredTracks = {};
   backgroundStyle;
 
   constructor(private musicService: MusicService) {}
@@ -24,21 +24,17 @@ export class AppComponent {
   		this.handleRandom();
   	});
 
-  	// On song end
     this.musicService.audio.onended = this.handleEnded.bind(this);
-    // On play time update
     this.musicService.audio.ontimeupdate = this.handleTimeUpdate.bind(this);
   }
 
   handleRandom() {
-    // Pluck a song
     const randomTrack = this.musicService.randomTrack(this.tracks);
-    // Play the plucked song
-    this.musicService.play(randomTrack.stream_url)
-    // Set the title property
+    this.musicService.load(randomTrack.stream_url)
     this.title = randomTrack.title;
-    // Create a background based on the playing song
+    this.paused = false;
     this.backgroundStyle = this.composeBackgroundStyle(randomTrack.artwork_url)
+
   }
 
    handleEnded(e) {
@@ -46,6 +42,9 @@ export class AppComponent {
   }
 
   handleTimeUpdate(e) {
+    if(isNaN(this.musicService.audio.duration)){
+      return;
+    }
     const elapsed =  this.musicService.audio.currentTime;
     const duration =  this.musicService.audio.duration;
     this.position = elapsed / duration;
@@ -77,7 +76,6 @@ export class AppComponent {
 
   handleBackward() {
     let elapsed =  this.musicService.audio.currentTime;
-    console.log(elapsed);
     if(elapsed >= 5) {
       this.musicService.audio.currentTime = elapsed - 5;
     }
@@ -92,9 +90,11 @@ export class AppComponent {
   }
 
    handleUpdate(track) {
-    this.musicService.play(track.stream_url);
+    this.musicService.load(track.stream_url);
+    this.musicService.play()
     this.title = track.title;
-    this.backgroundStyle = this.composeBackgroundStyle(track.artwork_url)
+    this.backgroundStyle = this.composeBackgroundStyle(track.artwork_url);
+    this.paused = true;
   }
 
   composeBackgroundStyle(url) {

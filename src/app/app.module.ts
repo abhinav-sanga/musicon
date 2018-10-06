@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { MusicModule } from './music/music.module';
@@ -31,7 +32,8 @@ import { MusicService } from './music/services/music.service';
     FormsModule,
     HttpClientModule,
     MusicModule,
-    AutoCompleteModule
+    AutoCompleteModule,
+    BrowserAnimationsModule
 ],
   providers: [
     ApiService,
